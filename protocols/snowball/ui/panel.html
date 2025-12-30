@@ -1,0 +1,80 @@
+<!-- src/ice_studio/snowball/ui/panel.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>ICE Snowball</title>
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            background: #0b1220;
+            color: #e6f0ff;
+            padding: 16px;
+            width: 320px;
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 16px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        button {
+            background: #4da3ff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: #000;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 8px;
+        }
+        button.reject {
+            background: #ff6b6b;
+        }
+        .meta {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>ICE Snowball</h2>
+        <div class="meta">
+            Incoming pairing request
+        </div>
+
+        <p>
+            A remote ICE Studio instance wants to use this machine
+            as a compute host.
+        </p>
+
+        <p>
+            Requested resources:
+            <br />
+            • CPU: <span id="cpu"></span>%
+            <br />
+            • RAM: <span id="ram"></span> MB
+            <br />
+            • GPU layers: <span id="gpu"></span>
+        </p>
+
+        <div>
+            <button onclick="approve()">Approve</button>
+            <button class="reject" onclick="reject()">Reject</button>
+        </div>
+    </div>
+
+    <script>
+        function approve() {
+            window.snowball.approve();
+        }
+        function reject() {
+            window.snowball.reject();
+        }
+    </script>
+</body>
+</html>
