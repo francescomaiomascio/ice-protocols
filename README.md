@@ -1,87 +1,209 @@
 # ICE Protocols
+## Trust, Identity, and Communication Layer of the ICE Ecosystem
 
-[![ICE Ecosystem](https://img.shields.io/badge/ICE-Ecosystem-8FB9FF?style=flat)](#)
-[![Docs](https://img.shields.io/badge/docs-ICE--Docs-8FB9FF?style=flat)](https://github.com/francescomaiomascio/ice-docs)
-[![Status](https://img.shields.io/badge/status-active--development-6B7280?style=flat)](#)
-[![Language](https://img.shields.io/badge/python-3.x-111827?style=flat)](#)
-[![License](https://img.shields.io/badge/license-MIT-7A7CFF?style=flat)](#)
+ICE Protocols defines the **foundational communication and trust layer**
+of the ICE ecosystem.
 
-ICE Protocols defines the **communication, security, and coordination protocols**
-used across the ICE ecosystem.
+It establishes **how ICE components discover each other,
+authenticate, authorize, and exchange information**
+in distributed, heterogeneous, and long-running systems.
 
-It provides low-level primitives for secure identity, permissions, pairing,
-transport, and agent coordination between distributed ICE components.
+ICE Protocols does not execute logic.
+It does not reason.
+It does not orchestrate behavior.
 
-ICE Protocols does not implement business logic.
-It defines **how systems discover each other, trust each other, and communicate**.
+It defines **how trust and communication are made possible — and constrained**.
 
 ---
 
-## Core Responsibilities
+## Foundation Dependency
 
-ICE Protocols is responsible for:
+This project derives its assumptions and constraints from  
+**ICE Foundation v1.0.0**.
 
-- Defining security and identity protocols
-- Managing authentication, authorization, and tokens
-- Supporting secure pairing and trust establishment
-- Providing network and transport primitives
-- Enabling agent-to-agent and system-to-system coordination
-- Acting as the foundation for distributed ICE deployments
+In particular, it is bound by:
+
+- Explicit Authority and Control Separation (Axiom A-002)
+- State as a Derived and Inspectable Artifact (Axiom A-003)
+- Traceability as a Structural Invariant (I-001)
+- Governance (I-003)
+- Governable Cognitive Reconfiguration (I-004)
+
+Protocols do not create authority.  
+They only carry it under constraint.
+
+---
+
+## What ICE Protocols Is
+
+ICE Protocols is:
+
+- a **trust and identity definition layer**
+- a **secure communication substrate**
+- a **coordination protocol suite**
+- a **boundary between distributed ICE systems**
+- a **foundation for safe federation and decentralization**
+
+It defines **how systems may interact**,
+not **what they decide**.
+
+---
+
+## What ICE Protocols Is Not
+
+ICE Protocols is **not**:
+
+- a runtime
+- a service mesh
+- a business logic layer
+- an orchestration engine
+- an intelligence or decision layer
+
+Protocols do not decide.  
+Protocols do not execute.  
+Protocols do not infer intent.
+
+They constrain interaction.
+
+---
+
+## Architectural Role
+
+ICE Protocols operates at the **trust and transport boundary**
+of the ICE ecosystem.
+
+It enables communication between:
+
+- ICE Runtime instances
+- ICE Engine deployments
+- ICE AI agents
+- ICE Studio clients
+- distributed ICE nodes
+- external systems and providers
+
+No distributed ICE system is considered valid
+without operating within these protocols.
 
 ---
 
 ## Protocol Scope
 
-ICE Protocols operates at the **infrastructure and trust layer**.
+ICE Protocols defines:
 
-It does not:
-- orchestrate execution
-- implement intelligence or reasoning
-- manage application state
-- expose user-facing features
+- identity and authentication primitives
+- authorization and permission models
+- trust establishment and pairing
+- secure transport abstractions
+- message integrity and provenance
+- agent-to-agent coordination rules
+- system-to-system communication semantics
 
-It does:
-- define secure communication rules
-- standardize transport mechanisms
-- enforce identity and permission models
-- enable safe distributed operation
+All protocols are:
+
+- explicit
+- inspectable
+- traceable
+- authority-aware
+
+Implicit trust is forbidden.
+
+---
+
+## Authority and Trust Separation
+
+ICE Protocols does **not** grant authority.
+
+- Authentication does not imply permission.
+- Authorization does not imply execution.
+- Transport does not justify action.
+
+Authority is exercised **only** by downstream systems
+(Runtime / Engine),
+under Foundation-defined governance.
+
+Protocols merely ensure that authority,
+when present,
+is carried safely and verifiably.
 
 ---
 
 ## Design Principles
 
-- Security by design, not by patching
-- Explicit identity and permission models
-- Protocols over ad-hoc integrations
-- Transport-agnostic abstractions
-- Clear separation between trust and execution
-- Designed for distributed and offline-first systems
+- Security as a structural property
+- Explicit identity over implicit trust
+- Protocols over ad-hoc integration
+- Transport-agnostic by design
+- Zero implicit authority
+- Designed for hostile and unreliable environments
+- Offline-capable and partition-tolerant
+
+ICE Protocols assumes failure,
+compromise,
+and partial connectivity as normal conditions.
 
 ---
 
-## Usage
+## Versioning and Evolution
 
-ICE Protocols is not used directly by end users.
+ICE Protocols evolves deliberately.
 
-It is consumed by:
-- ICE Runtime
-- ICE Engine
-- ICE AI
-- ICE Studio
-- Distributed ICE nodes and agents
+- Protocol versions are explicit
+- Backward compatibility is intentional
+- Breaking changes are rare and justified
+- Semantic drift is not allowed
 
-All inter-component communication relies on these protocols.
+Trust cannot be ambiguous.
+
+---
+
+## Repository Scope
+
+This repository contains:
+
+- protocol definitions
+- identity and trust models
+- message schemas
+- transport abstractions
+- security primitives
+
+It explicitly does **not** contain:
+
+- runtime execution logic
+- orchestration code
+- business rules
+- user-facing APIs
+- policy enforcement mechanisms
+
+---
+
+## Canonical Status
+
+ICE Protocols is **normative at the trust boundary**.
+
+Any ICE-compliant distributed system must:
+
+- implement these protocols
+- respect their semantics
+- not bypass or weaken them
+
+If communication violates these definitions,
+the system is invalid by construction.
 
 ---
 
 ## Status
 
-This project is under **active development**.
-Protocols may evolve as distributed requirements mature.
+ICE Protocols is under **active development**.
+
+Protocols will stabilize as distributed ICE deployments mature,
+but security and authority constraints are considered permanent.
 
 ---
 
-## License
+## Notes
 
-This project is licensed under the terms of the MIT license.
-See the `LICENSE` file for details.
+Distributed systems fail in silence  
+when trust is implicit.
+
+ICE Protocols exists to ensure  
+**that silence is never trusted**.
