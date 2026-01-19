@@ -1,135 +1,127 @@
-# Security Policy — ICE Foundation
+# Security Policy
 
 ## Purpose
 
-This document defines the **security posture** of the ICE Foundation repository.
+This document defines the **security posture** of this repository
+within the ICE ecosystem.
 
-Its purpose is to explicitly establish:
+The purpose of this policy is to:
 
-- the scope of security applicability
-- what constitutes a security concern at the foundation level
-- which classes of issues are explicitly out of scope
-- how security-relevant issues are reported and handled
+- define the operational security scope of this project
+- clarify what constitutes a security issue
+- establish reporting and disclosure expectations
+- preserve alignment with ICE Foundation invariants
 
-This policy exists to prevent ambiguity, misplaced expectations,
-and improper escalation of concerns that do not belong to this layer.
+This repository contains **executable code and/or operational logic**.
+Security concerns therefore include both **conceptual** and **implementation-level** risks.
 
 ---
 
-## Repository Scope
+## Relationship to ICE Foundation
 
-ICE Foundation contains the **axiomatic and authoritative layer** of the ICE ecosystem.
+This project is **downstream of ICE Foundation**.
 
-It includes exclusively:
+As such:
 
-- axioms and first principles
-- structural invariants
-- canonical definitions
-- governance rules
-- semantic boundaries and exclusions
+- ICE Foundation defines axioms and structural invariants
+- This repository must comply with those constraints
+- No implementation decision may violate Foundation authority
 
-It explicitly does **not** include:
+Any security issue that implies a violation of Foundation axioms
+is considered **critical**, regardless of exploitability.
 
-- executable code
-- runtime components
-- services or daemons
-- APIs, protocols, or interfaces
-- infrastructure definitions
-- deployment or operational artifacts
+---
 
-As a result, this repository exposes **no operational, network, or execution-level attack surface**.
+## Security Scope
+
+Security concerns for this repository include:
+
+- unauthorized execution or capability escalation
+- violation of authority or governance constraints
+- bypass of traceability or accountability mechanisms
+- nondeterministic or unreconstructable execution paths
+- unsafe handling of external inputs or providers
+- incorrect enforcement of permissions or boundaries
+- vulnerabilities in execution, IPC, or integration surfaces
+
+Both **design flaws** and **implementation defects** are in scope.
+
+---
+
+## Out of Scope
+
+The following are **not** handled in this repository:
+
+- vulnerabilities in third-party providers or models
+- infrastructure or cloud configuration issues
+- operating system or hardware security
+- vulnerabilities in unrelated downstream products
+
+Such issues must be reported to the appropriate owner.
 
 ---
 
 ## Supported Versions
 
-ICE Foundation does not define “supported versions” in an operational or
-security-maintenance sense.
+This project does not guarantee long-term security support
+for all historical versions.
 
-Security relevance in this repository applies only to:
+Security fixes apply to:
 
-- conceptual correctness
-- semantic consistency
-- preservation of declared authority boundaries
-- non-violation of stated axioms and invariants
+- the current main branch
+- active development branches, when applicable
 
-No guarantees are made regarding downstream implementations,
-even when they claim compliance.
+Users are expected to track the latest stable state.
 
 ---
 
-## Definition of a Security Issue
+## Reporting a Security Issue
 
-Within the scope of ICE Foundation, a **security issue** is any change,
-omission, or inconsistency that compromises the integrity of the foundation.
-
-This includes, but is not limited to:
-
-- violation of declared axioms or invariants
-- introduction of implicit or hidden authority
-- semantic ambiguity that may enable unsafe downstream interpretations
-- erosion of explicit conceptual boundaries
-- contradictions that undermine the trustworthiness of the foundation layer
-
-Security at this level is **epistemic**, not operational.
-
----
-
-## Explicitly Out of Scope
-
-The following are **not security issues** for this repository:
-
-- software vulnerabilities
-- dependency or supply-chain issues
-- cryptographic concerns
-- runtime exploits
-- infrastructure or deployment security
-- third-party integrations
-
-Such concerns must be addressed in the appropriate downstream repositories.
-
----
-
-## Reporting Process
-
-Security-relevant issues should be reported by opening a **public GitHub Issue**
+Security issues should be reported by opening a **GitHub Issue**
 in this repository.
 
-Reports must:
+Reports must include:
 
-- explicitly reference the affected documents or sections
-- describe the semantic or structural impact
-- explain why the issue constitutes a security concern at the foundation level
+- a clear description of the issue
+- affected components or files
+- security impact (authority, execution, data, governance)
+- steps to reproduce, if applicable
 
-There is **no private disclosure channel** for this repository.
-
----
-
-## Disclosure Model
-
-All reports, discussions, and resolutions are handled **publicly and transparently**.
-
-ICE Foundation contains no sensitive operational information and therefore
-does not require embargoed disclosure or coordinated vulnerability handling.
+If the issue involves **active exploitation**, clearly mark it as such.
 
 ---
 
-## Authority Definition
+## Disclosure Policy
 
-For ICE Foundation, **security is defined as**:
+There is **no private disclosure channel** by default.
 
-> The preservation of conceptual integrity, semantic clarity,
-> and explicit authority boundaries across the ICE system.
+ICE favors **transparent and public resolution** unless:
 
-Any change that weakens these properties is considered a security risk,
-even in the absence of executable code.
+- active exploitation is demonstrated
+- coordinated disclosure is explicitly requested
+
+Maintainers may temporarily restrict discussion
+to prevent harm, but transparency is the default.
+
+---
+
+## Security Definition (ICE Context)
+
+Within ICE, security is defined as:
+
+> The preservation of explicit authority, traceable execution,
+> and governable behavior over time.
+
+Any behavior that undermines these properties
+is considered a security failure,
+even if no traditional exploit is involved.
 
 ---
 
 ## Canonical Status
 
-This policy is authoritative for ICE Foundation.
+This policy is authoritative for this repository.
 
-Downstream repositories must define their own security policies,
-appropriate to their execution and operational scope,
-while remaining consistent with the principles defined here.
+It complements, and does not override,
+the axioms, invariants, and governance rules
+defined in ICE Foundation.
